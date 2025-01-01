@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Place Keeper index</title>
 </head>
-<body>
+<body onload="onInit()">
     <header>Find your way back to your best places</header>
     <main>
         <nav>
@@ -14,6 +14,13 @@
             <br />
             <a href="places.html">Map</a>
         </nav>
+        <section>
+            <article class="email"></article>
+            <article class="bday"></article>
+            <article class="btime"></article>
+        </section>
     </main>
+    <script src="js/services/storageService.js"></script>
+    <script src="js/controllers/homeController.js"></script>
 </body>
 </html>

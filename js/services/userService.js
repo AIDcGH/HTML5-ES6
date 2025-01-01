@@ -1,12 +1,12 @@
 'use strict'
 
 const PREF_KEY = 'user-preferences'
-const gUser = createUser()
+const gPrefs = createUserPrefs()
 
-function createUser() {
-    let user = loadFromStorage(PREF_KEY)
+function createUserPrefs() {
+    let prefs = loadFromStorage(PREF_KEY)
 
-    if (!user) user = {
+    if (!prefs) prefs = {
         email: '',
         background: '',
         color: '',
@@ -14,20 +14,20 @@ function createUser() {
         bday: '',
         btime: ''
     }
-    return user
+    return prefs
 }
 
-function getUser() {
-    return gUser
+function getPrefs() {
+    return gPrefs
 }
 
-function updateUser(elEmail, elBackground, elColor, elAge, elBday, elBtime) {
-    gUser.email = elEmail.value
-    gUser.background = elBackground.value
-    gUser.color = elColor.value
-    gUser.age = elAge.value
-    gUser.bday = elBday.value
-    gUser.btime = elBtime.value
+function updatePrefs(elEmail, elBackground, elColor, elAge, elBday, elBtime) {
+    gPrefs.email = elEmail.value
+    gPrefs.background = elBackground.value
+    gPrefs.color = elColor.value
+    gPrefs.age = elAge.value
+    gPrefs.bday = elBday.value
+    gPrefs.btime = elBtime.value
 
-    saveToStorage(PREF_KEY, gUser)
+    saveToStorage(PREF_KEY, gPrefs)
 }

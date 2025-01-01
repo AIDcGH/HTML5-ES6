@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/map.css">
     <title>Place Keeper map</title>
 </head>
-<body>
-
+<body onload="onInit()">
+    <h1>Place Keeper</h1>
+    <h4>Find your way back to your best places</h4>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="user-settings.html">User Prefs</a>
+    </nav>
+    <main>
+        <div class="content-wrapper">
+            <section><map name="g-maps"></map></section>
+            <article><ul></ul></article>
+        </div>
+    </main>
+    <script src="js/services/storageService.js"></script>
+    <script src="js/services/utilService.js"></script>
+    <script src="js/services/placeService.js"></script>
+    <script src="js/controllers/placeController.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@ function onInit() {
 }
 
 function renderPrefs() {
-    const { email, background, color, age, bday, btime } = getUser()
+    const { email, background, color, age, bday, btime } = getPrefs()
 
     if (email) document.querySelector('input[name="email"]').value = email
 
@@ -26,5 +26,5 @@ function showAge(val) {
 
 function onSubmit(ev) {
     ev.preventDefault()
-    updateUser(...document.querySelectorAll('input'))
+    updatePrefs(...document.querySelectorAll('input'))
 }
