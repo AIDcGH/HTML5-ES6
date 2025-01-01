@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/user-prefs.css">
+    <title>Place Keeper user-prefs</title>
+</head>
+<body onload="onInit()">
+    <main>
+        <form onsubmit="onSubmit(event)">
+            <h2>User Preferences</h2>
+            <article>
+                <label for="email">E-mail:</label>
+                <input required type="email" name="email" id="email">
+            </article>
+            <table class="colors-table">
+                <tr>
+                    <td><label for="background">Background Color:</label></td>
+                    <td><input type="color" name="background" id="background" value="#338877" /></td>
+                </tr>
+                <tr>
+                    <td><label for="color">Text Color:</label></td>
+                    <td><input type="color" name="color" id="color" /></td>
+                </tr>
+            </table>
+            <table class="age-table">
+                <tr>
+                    <td><label for="age">Age:</label></td>
+                    <td class="age-range">
+                        <span class="s-age"></span>
+                        <input type="range" name="age" id="age" min="18" max="120" value="18" oninput="showAge(this.value)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="bday">Day of Birth:</label></td>
+                    <td><input type="date" name="bday" id="bday" value="1970-01-01"/></td>
+                </tr>
+                <tr>
+                    <td><label for="btime">Time of Birth</label></td>
+                    <td><input type="time" name="btime" id="btime" value="00:00"/></td>
+                </tr>
+            </table>
+            <button>Set</button>
+        </form>
+    </main>
+    <script src="js/services/storageService.js"></script>
+    <script src="js/services/userService.js"></script>
+    <script src="js/controllers/userController.js"></script>
+</body>
+</html>
